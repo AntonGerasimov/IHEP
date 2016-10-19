@@ -15,10 +15,10 @@ void PhaseSpace() {
    TGenPhaseSpace event1, event2, event3;
    event1.SetDecay(W, 2, masses1);
 
-   TH1F *h1 = new TH1F("h1", "h1", 50,.0,1.0);
-   TH1F *h2 = new TH1F("h2", "h2", 50,.0,1.0);
-   TH1F *h3 = new TH1F("h3", "h3", 50,.0,1.0);
-   TH1F *h4 = new TH1F("h4", "h4", 50,.0,1.0);
+   TH1F *h1 = new TH1F("h1", "h1", 500,.0,1.0);
+   TH1F *h2 = new TH1F("h2", "h2", 500,.0,1.0);
+   TH1F *h3 = new TH1F("h3", "h3", 500,.0,1.0);
+   TH1F *h4 = new TH1F("h4", "h4", 500,.0,1.0);
    for (Int_t n=0;n<100000;n++) {
       Double_t weight1 = event1.Generate();
 
@@ -93,7 +93,7 @@ void PhaseSpace() {
           }
       }
 
-      sigma = 0.5;
+      sigma = 0.15;
       for (int i=0; i<4; i++){
             y[i]->SetE(old[i]->E()*(1+sigma*rand[i]));
             y[i]->SetPx(old[i]->Px()*(1+sigma*rand[i]));
